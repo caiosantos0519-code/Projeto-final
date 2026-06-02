@@ -1,5 +1,98 @@
-body{
-     background-color: hsl(192, 13%, 8%);
-     color: white;
-      font-family: Arial, Helvetica, sans-serif;
-}   
+/* 1. Reset básico e boas práticas */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* 2. Seu Body original atualizado para centralizar o conteúdo */
+body {
+    background-color: hsl(180, 7%, 5%);
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    
+    /* Centraliza tudo na tela */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+/* 3. Container principal */
+.container {
+    text-align: center;
+    max-width: 1000px;
+    width: 100%;
+}
+
+.main-header h1 {
+    margin-bottom: 10px;
+    font-size: 2.5rem;
+}
+
+.main-header h2 {
+    margin-bottom: 40px;
+    color: hsl(192, 13%, 70%); /* Um tom mais claro derivado da sua cor */
+    font-weight: normal;
+}
+
+/* 4. Galeria de fotos responsiva */
+.gallery {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap; /* Alinha em linha no PC e quebra em coluna no celular */
+    margin-bottom: 40px;
+}
+
+.gallery img {
+    width: 100%;
+    max-width: 300px; /* Mantém o tamanho de 300px que você queria */
+    height: 200px; /* Define altura fixa para alinhar todas as fotos */
+    object-fit: cover; /* Corta a imagem proporcionalmente sem distorcer */
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+}
+
+/* 5. Link/Botão estilizado */
+.btn-primary {
+    display: inline-block;
+    background-color: hsl(209, 98%, 46%); /* Um azul que combina com o fundo */
+    color: white;
+    padding: 12px 28px;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 6px;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.btn-primary:hover {
+    background-color: hsl(192, 80%, 35%);
+    transform: scale(1.05); /* Efeito sutil ao passar o mouse */
+}
+
+.main-header h1 {
+    margin-bottom: 15px;
+    font-size: 2.5rem;
+    
+    animation: entradaSuave 2s ease-out;
+}
+.main-header h2 {
+    margin-bottom: 10px;
+    font-size: 2.5rem;
+    
+    animation: entradaSuave 3s ease-out;
+}
+
+
+@keyframes entradaSuave {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
